@@ -186,18 +186,59 @@ public class Board{
 			if(changesMade == 0  && !isSolved()) {
 				display();
 				System.out.println("GUESS");
-				guess();
-				changesMade ++;
+				for(int x = 0; x < 9; x++) {
+					for(int y = 0; y <9; y++) {
+						if(board[x][y].getNumber() == 0) {
+							guess(x,y);
+						}
+					}
+				}
 			}
 				
 				
 			}
 		}		
 	
-	public void guess()
+	public boolean guess(int row, int col)
 	{
+		if( col == 9) {
+			row ++;
+			col = 0;
+		}
+		if(board[row][col].getNumber()!= 0) {
+			return guess(row, col+1);
+		}
+		for(int v = 1; v <= 9; v++) {
+			board[row][col].setNumber(v);
+			if(isValid(row, col, v)) {
+				return true;
+			}
+			board[row][col].setNumber(0);
+		}
+		return false;
+	}
+	
+	public boolean isValid(int row, int col, int num) {
+		for(int x = 0; x < 9; x ++) {
+			if(board[row][x].getNumber() == num) {
+				return false;
+			}
+		}
+		for(int x = 0; x < 9; x ++) {
+			if(board[x][col].getNumber() == num) {
+				return false;
+			}
+		}
+		for(int x = row - row%3; x < row - row%3 + 3; x++) {
+			for(int y = col-col%3;y<col-col%3 + 3; y++) {
+				if(board[x][y].getNumber()==num) {
+					return false;
+				}
+			}
+		}
 		
-		return;
+		return true;
+		
 	}
 
 	///TODO: logic1
