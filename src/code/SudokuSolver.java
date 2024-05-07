@@ -6,7 +6,7 @@ public class SudokuSolver {
 		// TODO Auto-generated method stub
 
 		Board puzzle = new Board();
-		puzzle.loadPuzzle("medium");	
+		puzzle.loadPuzzle("medium");
 		puzzle.display();
 		puzzle.logicCycles();
 		System.out.println(puzzle.errorFound());

@@ -183,77 +183,23 @@ public class Board{
 			
 			display();
 
-//			if(changesMade == 0  && !isSolved()) {
-//				display();
-//				System.out.println("GUESS");
-//				guess();
-//				changesMade ++;
-//			}
-//				
+			if(changesMade == 0  && !isSolved()) {
+				display();
+				System.out.println("GUESS");
+				guess();
+				changesMade ++;
+			}
+				
 				
 			}
 		}		
 	
-//	public void revert() {
-//		for(int x = 0; x < 9; x ++) {
-//			for(int y = 0; y < 9; y ++) {
-//				board[x][y].reset();//method that sets num to 0 and turns all pot to true
-//				board[x][y].setNumber(list[numGuess - 1].getNumber(x,y));
-//				
-//				boolean guessPotential[] = list[numGuess - 1].getPotential(x,y);
-//				
-//				for(int num = 1; num <= 9; num ++) {
-//					if(guessPotential[num] == true) {
-//						board[x][y].turnOn(num);
-//					}
-//					else {
-//						board[x][y].cantBe(num);
-//					}
-//				}
-//			}
-//		}
-//		
-//		numGuess --;
-//		
-//		boolean guessMade = false;
-//		
-//		for(int x = 0; x < 9 && !guessMade; x ++) {
-//			for(int y = 0; y < 9 && !guessMade; y ++) {
-//				if(board[x][y].getNumber() == 0) {
-//					//continue
-//					board[x][y].cantBe(board[x][y].getFirstPotential());
-//					
-//					list[numGuess] = new Guess(this);//this - refers to itself (the board)
-//					numGuess ++;
-//					
-//					solve(x,y,board[x][y].getFirstPotential());
-//					guessMade = true;
-//					
-//					
-//				}
-//			}
-//		}
-//	}
-	
-//	public void guess() {
-//		
-//		boolean guessMade = false;
-//		
-//		for(int x = 0; x < 9 && !guessMade; x ++) {
-//			for(int y = 0; y < 9 && !guessMade; y ++) {
-//				if(board[x][y].getNumber() == 0) {
-//					list[numGuess] = new Guess(this);//this - refers to itself (the board)
-//					numGuess ++;
-//					
-//					solve(x,y,board[x][y].getFirstPotential());
-//					guessMade = true;
-//					
-//				}
-//			}
-//		}
-//		
-//	}
-//	
+	public void guess()
+	{
+		
+		return;
+	}
+
 	///TODO: logic1
 	/*This method searches each row of the puzzle and looks for cells that only have one potential.  If it finds a cell like this, it solves the cell 
 	 * for that number. This also tracks the number of cells that it solved as it traversed the board and returns that number.

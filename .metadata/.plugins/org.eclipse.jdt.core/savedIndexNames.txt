@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+/Users/billykeyss/Desktop/Comp Sci 30 (JAVA)/SudokuSolver/.metadata/.plugins/org.eclipse.jdt.core
+1034153714.index
+2095507666.index
+3718797003.index
+1865797976.index
+1329876459.index
+3074455524.index
+750132118.index
