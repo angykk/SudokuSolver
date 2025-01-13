@@ -45,6 +45,18 @@ public class Cell {
 		}
 		return num;
 	}
+
+	public int getLastPotential(){
+		int num = 0;
+		for(int x = 9; x >= 0; x --) {
+			if(potential[x]) {
+				num = x;
+				break;
+			}
+		}
+		
+		return num;
+	}
 	
 	//This method will return the first number that a cell can possibly be.
 	public int getFirstPotential()
